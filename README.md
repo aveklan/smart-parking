@@ -10,18 +10,18 @@ The problem that this IoT project aims to cope with is the difficulty of finding
 
 ### 2. What data are collected and by which sensors?
 
-Each parking spot will comprehend a laser sensors, responsible of detecting wether the car spot is free or occupied. This sensor, among with the ESP32 board, will detect the data regarding the state of the parking spot and the overall duration of the parking.
+Each parking spot will comprehend a laser sensor, responsible of detecting whether the car spot is free or occupied. This sensor, along with the ESP32 board, will detect the data regarding the state of the parking spot and the overall duration of the parking.
 The data collected can be used in future to generate statistical analysis.
 
 ### 3. What are the connected components, the protocols to connect them and the overall IoT architecture?
 
-The project components are the lasers sensors, green and red leds and ESP32 board among with its display. All the components will be connected to the ESP32 board, that will manage its functioning and interaction as described below.
+The project components are the lasers sensors, green and red LEDs and ESP32 board among with its display. All the components will be connected to the ESP32 board, that will manage its functioning and interaction as described below.
 
-One red and one green led will be positioned above each parking spot. The ESP32 board will activate the red or the green led, depending on wether the laser sensor indicates that the parking space is free or occupied.
+One red and one green led will be positioned above each parking spot. The ESP32 board will activate the red or the green led, depending on whether the laser sensor indicates that the parking space is free or occupied.
 
 The ESP32 display will be used to show a parking map with the free and the occupied parking spots, updated regularly.
 
-The collected data will be sent to an AWS web server, and it will be accessible trough a web portal that, using these informations, will display real time updates regarding the parking area status.
+The collected data will be sent to an AWS web server, and it will be accessible through a web portal that, using these information, will display real time updates regarding the parking area status.
 
 ![Overall project Architecture](/Diagrams/Parking%20Diagram.JPG)
 
