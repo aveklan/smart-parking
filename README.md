@@ -29,14 +29,16 @@ The collected data will be sent to an AWS web server, and it will be accessible 
 
 **ESP32v3 board with Display**
 ![ESP32v3 board with Display](/images/ESP32.jpg)
+
 **Infrared Emitters and Detectors**
 ![Infrared Emitters and Detectors](/images/Infrared%20Emitters%20and%20Detectors.jpg)
+
 **LEDs**
 ![LEDs](/images/LED.webp)
 
 ### 5. Network architecture
 
-![LEDs](/images/network_architecture.jpg)
+![Network architecture](/images/network_architecture.jpg)
 
 ### 6. How do you measure the performance of the system?
 
