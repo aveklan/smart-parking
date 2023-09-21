@@ -22,7 +22,9 @@ The following picture shows a schema about the high level architecture described
 
 ![Overall project Architecture](/Diagrams/Parking%20Diagram.JPG)
 
-All components will be connected to the ESP32 board, which will manage their operation and interaction. The board will also be responsible for sending the data received from the sensors to the AWS web server, to make it accessible through the web portal.
+All components will be connected to the ESP32 board, which will manage their operation and interaction. The board will also be responsible for sending the data received from the sensors to the AWS web server, to make it accessible through the web portal.  
+Below a picture showing the prototype of the web app console avaiable at [This link](https://dev.djofecpup54jx.amplifyapp.com/)
+![ESP32v3 board with Display](/images/website.PNG)
 
 #### 3 Components
 
@@ -57,6 +59,8 @@ The MQTT broker interfaces with AWS IoT Core using the Python bridge, maintainin
 AWS IoT Core treats the incoming data as if it's from an ESP32 board, allowing rule-based actions to be defined. All data received on this topic is then stored in a DynamoDB table  
 Subsequently, a Lambda function, secured by AWS IAM, retrieves data from DynamoDB. An API Gateway is employed to create a RESTful GET API linked to the Lambda function, providing a web-app-accessible endpoint.
 The final deployment is then hosted by AWS Amplify.
+
+### 5. Technical details
 
 ### 6. How do you measure the performance of the system?
 
