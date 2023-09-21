@@ -26,7 +26,7 @@ All components will be connected to the ESP32 board, which will manage their ope
 Below a picture showing the prototype of the web app console avaiable at [This link](https://dev.djofecpup54jx.amplifyapp.com/)
 ![ESP32v3 board with Display](/images/website.PNG)
 
-#### 3 Components
+### 3 Components
 
 **ESP32v3 board with Display**
 ![ESP32v3 board with Display](/images/ESP32.jpg)
@@ -62,9 +62,20 @@ The final deployment is then hosted by AWS Amplify.
 
 ### 5. Technical details
 
-### 6. How do you measure the performance of the system?
+As we introduced before, the parked car is detected by using a pair of infrared sensors.  
+The emitter is driven up to 50mA. The detect is a NPN transistor that is biased by incoming IR light.  
+In a real case scenario, a parking spot, will have easy access to power supply that we can use for powering both the LEDs and the ESP32 board.
 
-The system should be able to correctly identify weather the parking spot is occupied. It should also be able to avoid false laser sensor updates that may be caused by people standing in front of the sensor or other environment variables such as animals or trash.
+#### Avoiding false measurements
+
+Infrared sensors must be positioned so that they only detect the parked car and not other elements that could trigger them (birds, small animals, leaves, etc.). A good solution might be to position them just below the height where the bodywork on average ends and the windows begin.This must however be decided on the basis of the location and specific characteristics of the parking area and parking space.  
+Another solution to avoid false measurements could be to take two measurements in a row a few seconds apart. In this way if something was passing through the sensors in the exact moment of the measurement, it can be detected as a false measurement.  
+Another solution, but that requires more effort and expenses, is to use other sensors such as weight or proximity sensors to ensure the avoidance of false measurements.
+
+### 6. Ideas and possible future implementations
+
+The proposed prototype could be be improved in several ways and could include many other features.  
+The feature that I would like to highlight in this section is the one that allows parking spots users to remotly reserve the car spot.
 
 ## Video demonstration
 
