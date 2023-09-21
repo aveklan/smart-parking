@@ -48,7 +48,15 @@ The red LED will be switched when a parked car is detected, the green one in the
 ![Network architecture](/images/network_architecture.jpg)
 The above pictore shows an high level explanation on the network architecture which is used to connect the ESP32v2 board to the web portal.  
 The network architecture is implemented using AWS, which is used to receive the information, process it and make it available through the web application.  
-Therefore, a Python transparent bridge it is used to allow the communication between the board and the AWS architecture.
+Therefore, a Python transparent bridge it is used to allow the communication between the board and the AWS architecture. Following a step by step explanation on how the connectivity works.
+
+---
+
+The ESP32 board communicates with the Mosquitto MQTT broker via the MQTT protocol over WiFi IPV4, both devices residing on the same network.  
+The MQTT broker interfaces with AWS IoT Core using the Python bridge, maintaining communication through MQTT, and sharing a common topic (smartpark). The bridge forwards the data to AWS IoT Core under the DATA topic.  
+AWS IoT Core treats the incoming data as if it's from an ESP32 board, allowing rule-based actions to be defined. All data received on this topic is then stored in a DynamoDB table  
+Subsequently, a Lambda function, secured by AWS IAM, retrieves data from DynamoDB. An API Gateway is employed to create a RESTful GET API linked to the Lambda function, providing a web-app-accessible endpoint.
+The final deployment is then hosted by AWS Amplify.
 
 ### 6. How do you measure the performance of the system?
 
