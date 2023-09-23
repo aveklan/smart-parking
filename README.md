@@ -34,7 +34,7 @@ The ESP32v2 ins equipped wit an onboard 0.96-inch 128\*64 dot matrix Blue OLED d
 The display is used to show the parking map with the free and the occupied parking spots.
 
 **Infrared Emitters and Detectors**
-![Infrared Emitters and Detectors](/images/Infrared%20Emitters%20and%20Detectors.jpg)
+![Infrared Emitters and Detectors](/images/Infrared%20Emitters%20and%20Detectors.jpg)  
 These components are used to detect if a car is parked in a parking spot.
 They work in pairs, an emitter with a yellow dot on top and a receiver with a red dot.
 The pair is positioned facing each other, at the ends of each parking spot, so that the LED beam emitted by the emitter points directly the receiver.
@@ -72,10 +72,11 @@ Infrared sensors must be positioned so that they only detect the parked car and 
 Another solution to avoid false measurements could be to take two measurements in a row a few seconds apart. In this way if something was passing through the sensors in the exact moment of the measurement, it can be detected as a false measurement.  
 Another solution, but that requires more effort and expenses, is to use other sensors such as weight or proximity sensors to ensure the avoidance of false measurements.
 
-### 6. Ideas and possible future implementations
+### 6. Possible future implementations
 
 The proposed prototype could be be improved in several ways and could include many other features.  
-The feature that I would like to highlight in this section is the one that allows parking spots users to remotly reserve the car spot.
+The one I would like to highlight in this section is the one that allows parking spots users to remotly reserve the car spot.  
+To implement this improvement, there must be some mechanisms that allows only the users the reserved a parking spot to park on. For example an automatic parking barrier could be placed in corrispondance of parking spots. This barrier will activate when someone reserve the parking spot via web app and it can be deactivated only by the user that reserved it.
 
 ## Video demonstration
 
