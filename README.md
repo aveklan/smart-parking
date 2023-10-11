@@ -73,11 +73,11 @@ AWS IoT Core treats the incoming data as if it's from an ESP32 board, allowing r
 Subsequently, a Lambda function, secured by AWS IAM, retrieves data from DynamoDB. An API Gateway is employed to create a RESTful GET API linked to the Lambda function, providing a web-app-accessible endpoint.
 The final deployment is then hosted by AWS Amplify.
 
-### 5. Technical details
+### 5. Considertations and evaluation
 
-As we introduced before, the parked car is detected by using a pair of infrared sensors.  
-The emitter is driven up to 50mA. The detect is a NPN transistor that is biased by incoming IR light.  
-In a real case scenario, a parking spot, will have easy access to power supply that we can use for powering both the LEDs and the ESP32 board.
+As we introduced before, the parked car is detected by using a pair of infrared sensors.
+The emitter is driven up to 50mA. The detect is a NPN transistor that is biased by incoming IR light.
+The overall system energy consuption will highly depends on the adopted sensors and lights. However, in a real case scenario, each parking spot should have easy access to power supply that can be used for powering the LEDs, the the sensors and the ESP32 board.
 
 #### Avoiding false measurements
 
