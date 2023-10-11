@@ -1,4 +1,4 @@
-# smart parking
+# Smart Parking
 
 ## Avesani Davide 2060112
 
@@ -6,7 +6,7 @@
 
 ### 1. Introduction
 
-The problem that this IoT project aims to cope with is the difficulty of finding available parking spaces in crowded areas. Traditional parking areas can be time-consuming and frustrating, often resulting in wasted time and increased traffic congestion. Smart parking tunnel solution uses sensors to detect available spaces and communicates that information to a web app. In this way, drivers can quickly and easily locate available parking spots. With the ability to access the data through a web app, drivers can plan their parking before they arrive, saving time and reducing stress. The use of IoT technology in this project provides a more efficient and user-friendly solution to a common problem.
+Finding parking spots in traditional parking lots can be slow and annoying, often causing you to waste time and making traffic worse. Traditional parking areas can be time-consuming and frustrating, often resulting in wasted time and increased traffic congestion. Smart parking tunnel solution uses sensors to detect available spaces and communicates that information to a web app. In this way, drivers can quickly and easily locate available parking spots. With the ability to access the data through a web app, drivers can plan their parking before they arrive, saving time and reducing stress. The use of IoT technology in this project provides a more efficient and user-friendly solution to a common problem.
 
 ### 2. Prototype design
 
@@ -30,18 +30,31 @@ Below a picture showing the prototype of the web app console avaiable at [This l
 
 **ESP32v3 board with Display**
 ![ESP32v3 board with Display](/images/ESP32.jpg)
-The ESP32v2 ins equipped wit an onboard 0.96-inch 128\*64 dot matrix Blue OLED display.  
+WiFi LoRa 32 is a classic IoT dev-board designed & produced by Heltec Automation(TM), it’s a highly integrated product based on ESP32 + SX127x, it has Wi-Fi, BLE, LoRa functions, also Li-Po battery management system. It is equipped wit an onboard 0.96-inch 128\*64 dot matrix Blue OLED display.  
 The display is used to show the parking map with the free and the occupied parking spots.
 
 **Infrared Emitters and Detectors**
-![Infrared Emitters and Detectors](/images/Infrared%20Emitters%20and%20Detectors.jpg)  
+![Infrared Emitters and Detectors](/images/Infrared%20Emitters%20and%20Detectors.jpg)
+
+- Specifications:  
+   **Operating Voltage** 3.3V ~ 5V  
+   **Temperature Measurement Range** -40°C to 85°C  
+  [**Datasheet**](https://www.sparkfun.com/datasheets/Components/LTE-302.pdf)
+
 These components are used to detect if a car is parked in a parking spot.
 They work in pairs, an emitter with a yellow dot on top and a receiver with a red dot.
 The pair is positioned facing each other, at the ends of each parking spot, so that the LED beam emitted by the emitter points directly the receiver.
 If a car is then parked inside a parking spot, the led beam will be interrupted and the car will be therefore detected.
 
-**LEDs**
+**10mm LEDs**
 ![LEDs](/images/LED.webp)
+
+- Specifications  
+  **Forward Voltage** 1.8-2.2VDC  
+  **Forward Current** 20mA  
+  **Viewing angle** 40 degree  
+  **Output** 100-150 MCD
+
 A pair of LEDs, one green and one red, are placed in correspondance of each parking spot.  
 The red LED will be switched when a parked car is detected, the green one in the opposite case.
 
@@ -72,7 +85,17 @@ Infrared sensors must be positioned so that they only detect the parked car and 
 Another solution to avoid false measurements could be to take two measurements in a row a few seconds apart. In this way if something was passing through the sensors in the exact moment of the measurement, it can be detected as a false measurement.  
 Another solution, but that requires more effort and expenses, is to use other sensors such as weight or proximity sensors to ensure the avoidance of false measurements.
 
-### 6. Possible future implementations
+### 6. Hands on tutorial
+
+This section provides a hands on tutorial on how to set up and run the application.
+
+1. Download and install [RiotOs](https://www.riot-os.org/)
+2. Create a new RiotOs application and copy the code provided under the code folder.
+3. Purchase all the componens listed above and connect them as in the following pucture:
+   ![Network architecture](/images/Untitled%20Sketch_bb.jpg)
+4.
+
+### 7. Possible future implementations
 
 The proposed prototype could be be improved in several ways and could include many other features.  
 The one I would like to highlight in this section is the one that allows parking spots users to remotly reserve the car spot.  
@@ -84,4 +107,4 @@ To implement this improvement, there must be some mechanisms that allows only th
 
 ## Hackster.io article
 
-- [Project blog entry on Hackster](#)
+- [Project blog entry on Hackster](https://www.hackster.io/aveklan/smart-parking-ea58aa)
