@@ -2,6 +2,8 @@
 
 ## Avesani Davide 2060112
 
+[<img src="/images/linkedin.png" width="64" height="64">](https://www.linkedin.com/in/davide-avesani-394835223/)
+
 ### IoT Individual Project
 
 ### 1. Introduction
